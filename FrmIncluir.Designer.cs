@@ -31,18 +31,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmIncluir));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CbVendedor = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TxtProduto = new System.Windows.Forms.TextBox();
-            this.lbl1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.CbParcelamento = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.CbPagamento = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.CbVendedor = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.TxtValor = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lbl1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CbTipo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,15 +63,16 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.LightGray;
+            this.panel1.Controls.Add(this.CbTipo);
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.CbParcelamento);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.CbPagamento);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.CbVendedor);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.TxtValor);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.TxtProduto);
             this.panel1.Controls.Add(this.lbl1);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.ForeColor = System.Drawing.Color.Black;
@@ -78,6 +80,53 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(669, 469);
             this.panel1.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(115, 325);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Inserir";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // CbParcelamento
+            // 
+            this.CbParcelamento.FormattingEnabled = true;
+            this.CbParcelamento.Location = new System.Drawing.Point(407, 327);
+            this.CbParcelamento.Name = "CbParcelamento";
+            this.CbParcelamento.Size = new System.Drawing.Size(166, 21);
+            this.CbParcelamento.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label5.Location = new System.Drawing.Point(404, 308);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 16);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Parcelamento";
+            // 
+            // CbPagamento
+            // 
+            this.CbPagamento.FormattingEnabled = true;
+            this.CbPagamento.Location = new System.Drawing.Point(407, 275);
+            this.CbPagamento.Name = "CbPagamento";
+            this.CbPagamento.Size = new System.Drawing.Size(166, 21);
+            this.CbPagamento.TabIndex = 26;
+            this.CbPagamento.SelectedIndexChanged += new System.EventHandler(this.CbPagamento_SelectedIndexChanged_1);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
+            this.label3.Location = new System.Drawing.Point(404, 256);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(159, 16);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Forma de pagamento:";
             // 
             // CbVendedor
             // 
@@ -97,45 +146,35 @@
             this.label4.TabIndex = 18;
             this.label4.Text = "Vendedor:";
             // 
-            // textBox1
+            // TxtValor
             // 
-            this.textBox1.Font = new System.Drawing.Font("Arial", 10F);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(76, 323);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 23);
-            this.textBox1.TabIndex = 14;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.TxtValor.Font = new System.Drawing.Font("Arial", 10F);
+            this.TxtValor.ForeColor = System.Drawing.Color.Black;
+            this.TxtValor.Location = new System.Drawing.Point(407, 215);
+            this.TxtValor.Name = "TxtValor";
+            this.TxtValor.Size = new System.Drawing.Size(166, 23);
+            this.TxtValor.TabIndex = 14;
+            this.TxtValor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(69, 304);
+            this.label2.Location = new System.Drawing.Point(404, 196);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(46, 16);
             this.label2.TabIndex = 13;
             this.label2.Text = "Valor:";
             // 
-            // TxtProduto
-            // 
-            this.TxtProduto.Font = new System.Drawing.Font("Arial", 10F);
-            this.TxtProduto.ForeColor = System.Drawing.Color.Black;
-            this.TxtProduto.Location = new System.Drawing.Point(76, 267);
-            this.TxtProduto.Name = "TxtProduto";
-            this.TxtProduto.Size = new System.Drawing.Size(166, 23);
-            this.TxtProduto.TabIndex = 12;
-            this.TxtProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
             this.lbl1.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.lbl1.Location = new System.Drawing.Point(69, 248);
+            this.lbl1.Location = new System.Drawing.Point(73, 256);
             this.lbl1.Name = "lbl1";
-            this.lbl1.Size = new System.Drawing.Size(67, 16);
+            this.lbl1.Size = new System.Drawing.Size(125, 16);
             this.lbl1.TabIndex = 11;
-            this.lbl1.Text = "Produto:";
+            this.lbl1.Text = "Selecione o tipo:";
             // 
             // panel2
             // 
@@ -158,41 +197,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "CADASTRO DE VENDAS";
             // 
-            // CbParcelamento
+            // CbTipo
             // 
-            this.CbParcelamento.FormattingEnabled = true;
-            this.CbParcelamento.Location = new System.Drawing.Point(383, 267);
-            this.CbParcelamento.Name = "CbParcelamento";
-            this.CbParcelamento.Size = new System.Drawing.Size(166, 21);
-            this.CbParcelamento.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(380, 248);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(103, 16);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Parcelamento";
-            // 
-            // CbPagamento
-            // 
-            this.CbPagamento.FormattingEnabled = true;
-            this.CbPagamento.Location = new System.Drawing.Point(383, 215);
-            this.CbPagamento.Name = "CbPagamento";
-            this.CbPagamento.Size = new System.Drawing.Size(166, 21);
-            this.CbPagamento.TabIndex = 26;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(380, 196);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(159, 16);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Forma de pagamento:";
+            this.CbTipo.FormattingEnabled = true;
+            this.CbTipo.Location = new System.Drawing.Point(76, 275);
+            this.CbTipo.Name = "CbTipo";
+            this.CbTipo.Size = new System.Drawing.Size(166, 21);
+            this.CbTipo.TabIndex = 29;
             // 
             // FrmIncluir
             // 
@@ -203,7 +214,8 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmIncluir";
-            this.Text = "FrmIncluir";
+            this.Text = "BOX BALANCER";
+            this.Load += new System.EventHandler(this.FrmIncluir_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -219,9 +231,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TxtValor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TxtProduto;
         private System.Windows.Forms.Label lbl1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CbVendedor;
@@ -229,5 +240,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox CbPagamento;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox CbTipo;
     }
 }

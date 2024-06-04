@@ -17,12 +17,6 @@ namespace BETA___BOXBALANCER
         public FrmPrincipal()
         {
             InitializeComponent();
-            PnlMovimentacoes.Enabled = false;
-            PnlResumo.Enabled = false;
-            CbFuncionario.Items.Add("João Pedro");
-            CbFuncionario.Items.Add("Thiago");
-            CbFuncionario.Items.Add("João Paulo");
-            CbFuncionario.Items.Add("Leonardo");
         }
 
 
@@ -75,6 +69,16 @@ namespace BETA___BOXBALANCER
         {
             FrmExcluir excluir = new FrmExcluir();
             excluir.ShowDialog();
+        }
+
+        private void FrmPrincipal_Load(object sender, EventArgs e)
+        {
+            PnlMovimentacoes.Enabled = false;
+            PnlResumo.Enabled = false;
+            CbFuncionario.Items.Add("João Pedro");
+            CbFuncionario.Items.Add("Thiago");
+            CbFuncionario.Items.Add("João Paulo");
+            CbFuncionario.Items.Add("Leonardo");
         }
     }
 }

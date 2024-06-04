@@ -981,7 +981,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(1459, 840);
+            this.ClientSize = new System.Drawing.Size(1370, 749);
             this.Controls.Add(this.PanelTotal);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -989,6 +989,7 @@
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BOX BALANCER";
+            this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.PnlMovimentacoes.ResumeLayout(false);
