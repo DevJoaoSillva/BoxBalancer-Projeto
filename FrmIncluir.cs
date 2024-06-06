@@ -17,10 +17,7 @@ namespace BETA___BOXBALANCER
             InitializeComponent();
         }
 
-        private void CbPagamento_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        private InserindoValor objetoInserir = new InserindoValor();
 
         private void FrmIncluir_Load(object sender, EventArgs e)
         {
@@ -37,27 +34,24 @@ namespace BETA___BOXBALANCER
 
             CbTipo.Items.Add("Entrada");
             CbTipo.Items.Add("Saída");
-
         }
 
         private void CbPagamento_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-
             if (CbPagamento.SelectedItem.ToString() == "Crédito")
             {
-
-                double valor = int.Parse(TxtValor.Text);
-
+                double valor = double.Parse(TxtValor.Text);
                 CbParcelamento.Text = ($"1x de {valor:C}");
                 label5.Visible = true;
                 CbParcelamento.Visible = true;
 
+                CbParcelamento.Items.Clear();
                 CbParcelamento.Items.Add($"1x de {valor:C}");
-                CbParcelamento.Items.Add($"2x de {valor/2:C}");
-                CbParcelamento.Items.Add($"3x de {valor/3:C}");
-                CbParcelamento.Items.Add($"4x de {valor/4:C}");
-                CbParcelamento.Items.Add($"5x de {valor/5:C}");
-                CbParcelamento.Items.Add($"6x de {valor/6:C}");
+                CbParcelamento.Items.Add($"2x de {valor / 2:C}");
+                CbParcelamento.Items.Add($"3x de {valor / 3:C}");
+                CbParcelamento.Items.Add($"4x de {valor / 4:C}");
+                CbParcelamento.Items.Add($"5x de {valor / 5:C}");
+                CbParcelamento.Items.Add($"6x de {valor / 6:C}");
             }
             else
             {
@@ -92,11 +86,28 @@ namespace BETA___BOXBALANCER
                         }
                         else
                         {
+                            // Define os valores para a instância de InserindoValor
+                           // Defina o código conforme necessário
+                            objetoInserir.Vendedor_Movimentacao = CbVendedor.Text;
+                            objetoInserir.TipoDeEntrada_Movimentacao = CbTipo.Text;
+                            objetoInserir.Valor_Movimentacao = double.Parse(TxtValor.Text);
+                            objetoInserir.FormaPagamento_Movimentacao = CbPagamento.Text;
+
+                            // Chama o método Inserir para inserir os dados no banco de dados
+                            objetoInserir.Inserir();
+
+                            MessageBox.Show("Valor inserido com sucesso!");
+                            TxtValor.Clear();
                             
                         }
                     }
                 }
             }
+        }
+
+        private void BtnSair_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
