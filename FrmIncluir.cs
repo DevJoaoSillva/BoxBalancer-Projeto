@@ -34,7 +34,6 @@ namespace BETA___BOXBALANCER
             CbVendedor.Items.Add("João Pedro");
             CbVendedor.Items.Add("Thiago");
             CbVendedor.Items.Add("João Paulo");
-            CbVendedor.Items.Add("Leonardo");
 
             CbTipo.Items.Add("Entrada");
             CbTipo.Items.Add("Saída");

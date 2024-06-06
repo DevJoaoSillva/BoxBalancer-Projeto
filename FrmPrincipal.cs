@@ -1,13 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
-using System.Linq;
-using System.Security;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace BETA___BOXBALANCER
@@ -19,38 +13,35 @@ namespace BETA___BOXBALANCER
             InitializeComponent();
         }
 
-
         private void BtnAbrirCaixa_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(TxtSaldoInicial.Text))
             {
                 MessageBox.Show("Insira um valor inicial, mesmo que seja 'R$ 00,00'");
+                return;
+            }
+
+            if (string.IsNullOrEmpty(cbUsuario.Text))
+            {
+                MessageBox.Show("Selecione um funcionário para a abertura do caixa.");
+                return;
+            }
+
+            if (double.TryParse(TxtSaldoInicial.Text, out double saldoInicial))
+            {
+                pictureBox1.Image = Properties.Resources.caixaaberto;
+                LblCaixa.Text = "ABERTO";
+                TxtBSaldoInicialResumo.Text = saldoInicial.ToString("C2");
+                LblData.Text = DateTime.Now.ToLongDateString();
+                PnlMovimentacoes.Enabled = true;
+                PnlResumo.Enabled = true;
+                cbUsuario.Enabled = false;
+                TxtSaldoInicial.Enabled = false;
+                BtnAbrirCaixa.Enabled = false;
             }
             else
             {
-                if (string.IsNullOrEmpty(CbFuncionario.Text))
-                {
-                    MessageBox.Show("Selecione um funcionário para a abertura do caixa.");
-                }
-                else
-                {
-                    if (double.TryParse(TxtSaldoInicial.Text, out double saldoInicial))
-                    {
-                        pictureBox1.Image = Properties.Resources.caixaaberto;
-                        LblCaixa.Text = ("ABERTO");
-                        TxtBSaldoInicialResumo.Text = saldoInicial.ToString("C2");
-                        LblData.Text = DateTime.Now.ToLongDateString();
-                        PnlMovimentacoes.Enabled = true;
-                        PnlResumo.Enabled = true;
-                        CbFuncionario.Enabled = false;
-                        TxtSaldoInicial.Enabled = false;
-                        BtnAbrirCaixa.Enabled = false;
-                    }
-                    else
-                    {
-                        MessageBox.Show("O valor inserido não é válido. Insira um número válido.");
-                    }
-                }
+                MessageBox.Show("O valor inserido não é válido. Insira um número válido.");
             }
         }
 
@@ -75,10 +66,21 @@ namespace BETA___BOXBALANCER
         {
             PnlMovimentacoes.Enabled = false;
             PnlResumo.Enabled = false;
-            CbFuncionario.Items.Add("João Pedro");
-            CbFuncionario.Items.Add("Thiago");
-            CbFuncionario.Items.Add("João Paulo");
-            CbFuncionario.Items.Add("Leonardo");
+            CarregarUsuarios();
+        }
+
+        private void CarregarUsuarios()
+        {
+            List<string> usuarios = ObterUsuariosDoBancoDeDados();
+            foreach (var usuario in usuarios)
+            {
+                cbUsuario.Items.Add(usuario);
+            }
+        }
+
+        private List<string> ObterUsuariosDoBancoDeDados()
+        {
+            return new List<string> { "João Pedro", "Thiago", "João Paulo" };
         }
     }
 }
