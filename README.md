@@ -60,50 +60,9 @@ Bem-vindo ao projeto **BoxBalancer**! Esta aplicação desktop foi desenvolvida 
 
    - Acesse o botão "Imprimir Relatório" para visualizar os balanços financeiros e gerar relatórios personalizados.
 
-## Contribuição
-
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
-
-1. **Fork o Repositório**
-
-   Faça um fork do repositório para sua conta do GitHub.
-
-2. **Clone o Repositório**
-
-   Clone o repositório para sua máquina local:
-   ```bash
-   git clone https://github.com/seu-usuario/controle-de-caixa.git
-   ```
-
-3. **Crie um Branch para Sua Funcionalidade**
-
-   Crie um branch para a funcionalidade que você deseja adicionar:
-   ```bash
-   git checkout -b minha-funcionalidade
-   ```
-
-4. **Faça as Modificações Necessárias**
-
-   Adicione suas modificações e faça commit delas:
-   ```bash
-   git add .
-   git commit -m "Descrição das modificações"
-   ```
-
-5. **Envie suas Alterações**
-
-   Envie suas alterações para seu fork:
-   ```bash
-   git push origin minha-funcionalidade
-   ```
-
-6. **Abra um Pull Request**
-
-   Abra um pull request no repositório original e aguarde a revisão.
-
 ## Contato
 
-Para dúvidas ou sugestões, entre em contato pelo email: [joaocassiano.dev@gmail.com](mailto:joaocassiano.dev@gmail.com).
+Para dúvidas ou sugestões, entre em contato pelo email: [joao.paulo13186@gmail.com](mailto:joao.paulo13186@gmail.com).
 
 ---
 
